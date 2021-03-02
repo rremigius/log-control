@@ -1,12 +1,19 @@
 {
   "name": "log-control",
   "version": "0.0.1",
-  "description": "",
+  "description": "Logging util focused on fine-grained control of log levels of different components.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r esm -r ts-node/register **/*spec.ts",
+    "build": "tsc"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rremigius/log-control.git"
+  },
+  "homepage": "https://github.com/rremigius/log-control.git",
+  "bugs": "https://github.com/rremigius/log-control.git#issues",
+  "keywords": ["log", "logging", "levels", "log levels"],
   "author": "Remi Alkemade <info@remialkemade.nl> (https://www.remialkemade.nl)",
   "license": "ISC",
   "dependencies": {

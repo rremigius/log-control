@@ -23,6 +23,7 @@ type method = 'debug'|'log'|'info'|'warn'|'error'|'trace';
 let nativeLog:Driver = console;
 
 export default class Log {
+	static Level = {ALL: 0, DEBUG: 1, INFO: 2, WARN: 3, ERROR: 4, FATAL: 5, OFF: 6};
 	private static _root?:Log;
 	static get root() {
 		let Class = this;
