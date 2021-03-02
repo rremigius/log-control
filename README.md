@@ -3,6 +3,8 @@ LogControl
 
 LogControl is a logging utility focused at fine-grained control of logging levels of hierarchical components.
 
+Typescript supported.
+
 ## Features
 
 - Each module/component/file can have its own logger, messages prefixed with a specific name.
@@ -24,7 +26,7 @@ log.info("Logging works!");
 let log1 = Log.instance("component1");
 let log2 = Log.instance("component2");
 
-log1.setLevel(Log.Level.OFF);
+log1.setLevel(LogLevel.OFF);
 log1.info("This will not be logged.");
 
 log2.info("This will be logged.");
@@ -38,7 +40,7 @@ let interiorLog = Log.instance("car/interior");
 let seatingLog = Log.instance("car/interior/seating");
 let engineLog = Log.instance("car/engine");
 
-interiorLog.setLevel(Log.Level.OFF);
+interiorLog.setLevel(LogLevel.OFF);
 
 carLog.info("This will be logged.");
 interiorLog.info("This will *not* be logged.");
