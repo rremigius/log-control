@@ -17,15 +17,6 @@ interface Driver {
 }
 declare type method = 'debug' | 'log' | 'info' | 'warn' | 'error' | 'trace';
 export default class Log {
-    static Level: {
-        ALL: number;
-        DEBUG: number;
-        INFO: number;
-        WARN: number;
-        ERROR: number;
-        FATAL: number;
-        OFF: number;
-    };
     private static _root?;
     static get root(): Log;
     static get nativeLog(): Driver;
