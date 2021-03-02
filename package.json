@@ -2,7 +2,8 @@
   "name": "log-control",
   "version": "0.0.1",
   "description": "Logging util focused on fine-grained control of log levels of different components.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha -r esm -r ts-node/register **/*spec.ts",
     "build": "tsc"
