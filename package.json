@@ -1,5 +1,6 @@
 {
   "name": "log-control",
+  "type": "module",
   "version": "0.0.2",
   "description": "Logging util focused on fine-grained control of log levels of different components.",
   "main": "dist/index.js",

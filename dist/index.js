@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogLevel = void 0;
-const lodash_1 = require("lodash");
-var LogLevel;
+import { isString, isEmpty, isFunction, concat } from 'lodash';
+export var LogLevel;
 (function (LogLevel) {
     LogLevel[LogLevel["ALL"] = 0] = "ALL";
     LogLevel[LogLevel["DEBUG"] = 1] = "DEBUG";
@@ -11,9 +8,9 @@ var LogLevel;
     LogLevel[LogLevel["ERROR"] = 4] = "ERROR";
     LogLevel[LogLevel["FATAL"] = 5] = "FATAL";
     LogLevel[LogLevel["OFF"] = 6] = "OFF";
-})(LogLevel = exports.LogLevel || (exports.LogLevel = {}));
+})(LogLevel || (LogLevel = {}));
 let nativeLog = console;
-class Log {
+export default class Log {
     constructor(name, driver) {
         this.name = 'log';
         this.level = undefined;
@@ -42,7 +39,7 @@ class Log {
         return this.root.instance(name);
     }
     instance(name) {
-        if (!lodash_1.isString(name) || lodash_1.isEmpty(name)) {
+        if (!isString(name) || isEmpty(name)) {
             return this;
         }
         name = name.toLowerCase();
@@ -108,14 +105,14 @@ class Log {
         return this.level;
     }
     addName(args) {
-        return lodash_1.concat('[ ' + this.getFullName() + ' ]', args);
+        return concat('[ ' + this.getFullName() + ' ]', args);
     }
     message(method, level, args) {
         if (level < this.getLevel())
             return;
         let driver = this.getDriver();
         let func = driver[method];
-        if (!lodash_1.isFunction(func)) {
+        if (!isFunction(func)) {
             nativeLog.error(`Logging method '${method}' does not exist.`);
             return;
         }
@@ -140,4 +137,3 @@ class Log {
         return this.message('error', LogLevel.ERROR, args);
     }
 }
-exports.default = Log;
