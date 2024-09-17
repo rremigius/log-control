@@ -1,4 +1,4 @@
-import { isString, isEmpty, isFunction, concat } from 'lodash';
+import { isString, isEmpty, isFunction, concat } from 'lodash-es';
 
 export enum LogLevel {
 	ALL,

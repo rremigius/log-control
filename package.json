@@ -15,15 +15,20 @@
   },
   "homepage": "https://github.com/rremigius/log-control.git",
   "bugs": "https://github.com/rremigius/log-control.git#issues",
-  "keywords": ["log", "logging", "levels", "log levels"],
+  "keywords": [
+    "log",
+    "logging",
+    "levels",
+    "log levels"
+  ],
   "author": "Remi Alkemade <info@remialkemade.nl> (https://www.remialkemade.nl)",
   "license": "ISC",
   "dependencies": {
     "@types/chai": "^4.2.15",
-    "@types/lodash": "^4.14.168",
+    "@types/lodash-es": "^4.17.12",
     "@types/mocha": "^8.2.1",
     "esm": "^3.2.25",
-    "lodash": "^4.17.21"
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "chai": "^4.3.1",
