@@ -15,7 +15,7 @@ interface Driver {
     error: (...args: any[]) => void;
     trace: (...args: any[]) => void;
 }
-declare type method = 'debug' | 'log' | 'info' | 'warn' | 'error' | 'trace';
+type method = 'debug' | 'log' | 'info' | 'warn' | 'error' | 'trace';
 export default class Log {
     private static _root?;
     static get root(): Log;

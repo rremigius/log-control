@@ -1,4 +1,4 @@
-import { isString, isEmpty, isFunction, concat } from 'lodash';
+import { isString, isEmpty, isFunction, concat } from 'lodash-es';
 export var LogLevel;
 (function (LogLevel) {
     LogLevel[LogLevel["ALL"] = 0] = "ALL";
@@ -11,14 +11,7 @@ export var LogLevel;
 })(LogLevel || (LogLevel = {}));
 let nativeLog = console;
 export default class Log {
-    constructor(name, driver) {
-        this.name = 'log';
-        this.level = undefined;
-        this.driver = undefined;
-        this.instances = {};
-        this.name = name;
-        this.driver = driver;
-    }
+    static _root;
     static get root() {
         let Class = this;
         if (!Class._root) {
@@ -37,6 +30,15 @@ export default class Log {
         if (!name)
             return this.root;
         return this.root.instance(name);
+    }
+    name = 'log';
+    level = undefined;
+    driver = undefined;
+    parent;
+    instances = {};
+    constructor(name, driver) {
+        this.name = name;
+        this.driver = driver;
     }
     instance(name) {
         if (!isString(name) || isEmpty(name)) {
